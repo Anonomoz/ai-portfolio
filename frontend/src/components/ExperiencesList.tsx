@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ExperienceCard from './ExperienceCard';
+import { API_BASE_URL } from '../config';
 
 interface Experience {
   _id: string;
@@ -21,7 +22,7 @@ const ExperiencesList: React.FC = () => {
   useEffect(() => {
     const fetchExperiences = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/experiences');
+        const response = await fetch(`${API_BASE_URL}/api/experiences`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
