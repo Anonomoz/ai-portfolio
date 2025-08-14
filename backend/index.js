@@ -11,7 +11,7 @@ const chatRoutes = require('./src/routes/chat');
 const app = express();
 const allowedOrigins = [
   'http://localhost:3000',
-  'http://omer-ai-portfolio.netlify.app'
+  'https://omer-ai-portfolio.netlify.app'
 ];
 
 app.use(cors({
