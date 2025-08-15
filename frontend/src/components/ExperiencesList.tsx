@@ -38,7 +38,7 @@ const ExperiencesList: React.FC = () => {
     fetchExperiences();
   }, []);
 
-  if (loading) return <p>Loading experiences...</p>;
+  if (loading) return <p>Loading experiences... Please be patient</p>;
   if (error) return <p>Error: {error}</p>;
 
   return (

@@ -35,7 +35,7 @@ const ProjectsList: React.FC = () => {
     fetchProjects();
   }, []);
 
-  if (loading) return <p>Loading projects...</p>;
+  if (loading) return <p>Loading projects... Please be patient</p>;
   if (error) return <p>Error: {error}</p>;
 
   return (
