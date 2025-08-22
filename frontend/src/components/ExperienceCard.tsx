@@ -10,6 +10,19 @@ interface ExperienceCardProps {
   imageUrl?: string;
 }
 
+// helperfunction to show "2022-08" as "Aug 2022"
+function formatDateString(dateString?: string) {
+  if (!dateString) return "Present";
+  const [year, month] = dateString.split("-");
+  const monthNames = [
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+  ];
+  // fallback if month doesnt exists
+  const monthName = month ? monthNames[parseInt(month, 10) - 1] : "";
+  return `${monthName} ${year}`;
+}
+
 const ExperienceCard: React.FC<ExperienceCardProps> = ({
   role,
   company,
@@ -34,11 +47,11 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
         {role} @ {company}
       </h3>
       <p className="text-sm text-gray-700 mb-2">
-        {new Date(startDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })} - {endDate ? new Date(endDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short' }) : 'Present'}
+        {formatDateString(startDate)} - {endDate ? formatDateString(endDate) : "Present"}
       </p>
       <p className="mb-4">{description}</p>
       <p className="text-sm text-gray-700">
-        <strong>Tech stack:</strong> {techStack.join(', ')}
+        <strong>Tech stack:</strong> {techStack.join(", ")}
       </p>
     </div>
   );
