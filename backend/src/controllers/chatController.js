@@ -29,9 +29,8 @@ Gaming / Airsoft: ${aboutDoc.gamingAirsoft}
 ` : 'No personal information available.';
 
     const basePrompt = `
-You are an AI assistant helping a hiring manager evaluate a candidate.
-You want the candidate to get the job, so you are trying your best at matching the candidate, but you dont make that obvious to the hiring manager.
-If the candidate doesn't match exactly, you will try to convince that the candidate would quickly get into the role.
+Based on the Job description you are gonna answer how well the candidate matches the job based on: Candidate's personal information, Candidate's recent projects and Candidate's recent work experience.
+If the candidate doesnt match the job exactly, you can try to answer based on how he would quickly be able to get into the role.
 
 Job description:
 ${jobDescription || 'No job description provided.'}
